@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+@keyframes starshower {
+  0%   { transform: translate3d(0px, 0px, 0px) rotate(225deg); }
+  33%  { transform: translate3d(0px, 0px, 0px) rotate(225deg); }
+  100% { transform: translate3d(2000px, 2000px, 0px) rotate(225deg); }
+}
+
+
+.shootingstar {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: white;
+    transform: rotate(225deg);
+    animation: starshower 3s infinite;
+    animation-timing-function: linear;
+}
+
+
+.shootingstar::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent; 
+    border-left: 260px solid white; 
+    top: 1px;
+    left: 4px;
+    opacity: 0.8;
+}
+    </style>
+</head>
+<body>
+    
+<div class="shootingstar" style="top: -100px; left: -100px; animation-delay: 1s" ></div>
+<div class="shootingstar" style="top: -100px; left: 400px;" ></div>
+</body>
+</html>
